@@ -1,10 +1,13 @@
 #!/bin/sh
-searchEngine="google.com/search?"
-searchParameter="q="
-requestStr=$1
-shift
-for i in $@
-do
-	requestStr=$requestStr"%20"$i
-done
+searchEngine="google.com/"
+if [ $# -ne 0 ]
+then
+	searchParameter="search?q="
+	requestStr=$1
+	shift
+	for i in $@
+	do
+		requestStr=$requestStr"%20"$i
+	done
+fi
 surf $searchEngine$searchParameter$requestStr
