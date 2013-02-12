@@ -1,8 +1,8 @@
 #!/bin/sh
-searchEngine="google.com/"
+searchEngine="https://duckduckgo.com/"
 if [ $# -ne 0 ]
 then
-	searchParameter="search?q="
+	searchParameter="?q="
 	requestStr=$1
 	shift
 	for i in $@
